@@ -21,6 +21,8 @@ hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-
  - 图片懒加载
  - valine评论
  - fancy-box相册
+ - 支持bilibili视频引入
+ - 拥有独特的光标样式
  - pjax支持，音乐不间断
  - aplayer音乐播放器
  - 多级导航菜单（按现在大部分hexo主题来说，这也算是个特性了）
@@ -41,17 +43,28 @@ hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-
 
 [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)下载压缩包格式，因为除了主题内容还有些source的配置对新手来说比较太麻烦，直接下载解压就省去这些麻烦。
 
+
 **解压**
 
 下载好后解压到`*博客根目录*`（不是主题目录哦，重复的选择替换）。
 
-**安装依赖**
+**安装依赖**<font color="red">重要</font>
 
 接着在命令行（cmd、bash）运行`npm i`安装依赖。
 
 ```bash
 $ npm i
 ```
+> 如果在这里你卡住了的话，可以先配置好淘宝镜像
+
+```bash
+npm config set registry https://registry.npm.taobao.org
+```
+
+**测试**
+到了这里你基本上就可以运行`hexo s`看下效果了
+
+如果这里报错了，你得先解决错误，才能往下进行
 
 ## 2、主题配置
 
@@ -112,8 +125,8 @@ backup:
 ```yml
 # site name
 # 站点名 【改】
-prefixName: さくら荘その
-siteName: hojun
+prefixName: さくら荘その    # 网站的前缀
+siteName: hojun     # 你的网站名
 ```
 #### 标签图标和头像
 
@@ -129,7 +142,7 @@ avatar: /img/custom/avatar.jpg
 
 ```yml
 # 站点url 【改】
-url: https://sakura.hojun.cn
+url: https://sakura.hojun.cn    # 你自己的网站链接
 
 # 站点介绍（或者说是个人签名）【改】
 description: Live your life with passion! With some drive!
@@ -164,9 +177,9 @@ menus:
 ```yml
 # 站点菜单配置 【选】
 menus:
-  首页: { path: /, fa: fa-fort-awesome faa-shake }
+  首页: { path: /, fa: fa-fort-awesome faa-shake }   # 这个是一级菜单
   归档: { path: /archives, fa: fa-archive faa-shake, submenus: { 
-    技术: {path: /categories/技术/, fa: fa-code }, 
+    技术: {path: /categories/技术/, fa: fa-code },   # 这里是二级菜单
     生活: {path: /categories/生活/, fa: fa-file-text-o }, 
     资源: {path: /categories/资源/, fa: fa-cloud-download }, 
     随想: {path: /categories/随想/, fa: fa-commenting-o },
