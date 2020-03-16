@@ -22,6 +22,7 @@ hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-
  - 图片懒加载
  - valine评论
  - fancy-box相册
+ - 支持插入bilibili视频
  - pjax支持，音乐不间断
  - aplayer音乐播放器
  - 多级导航菜单（按现在大部分hexo主题来说，这也算是个特性了）
@@ -86,8 +87,8 @@ backup:
 ```yml
 # site name
 # 站点名 【改】
-prefixName: さくら荘その
-siteName: hojun
+prefixName: さくら荘その  # 这个是前缀
+siteName: hojun   # 你的站点名
 
 # favicon and site master avatar
 # 站点的favicon和头像 输入图片路径（下面的配置是都是cdn的相对路径，没有cdn请填写完整路径，建议使用jsdeliver搭建一个cdn啦，先去下载我的cdn替换下图片就行了，简单方便~）【改】
@@ -114,9 +115,9 @@ lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progre
 
 # 站点菜单配置 【选】
 menus:
-  首页: { path: /, fa: fa-fort-awesome faa-shake }
+  首页: { path: /, fa: fa-fort-awesome faa-shake }   #一级菜单
   归档: { path: /archives, fa: fa-archive faa-shake, submenus: { 
-    技术: {path: /categories/技术/, fa: fa-code }, 
+    技术: {path: /categories/技术/, fa: fa-code },    #二级菜单
     生活: {path: /categories/生活/, fa: fa-file-text-o }, 
     资源: {path: /categories/资源/, fa: fa-cloud-download }, 
     随想: {path: /categories/随想/, fa: fa-commenting-o },
@@ -328,13 +329,13 @@ links:
       name: Google
       desc: Google 镜像
   # 类型分组...
-  - group: 小伙伴们
+  - group: 小伙伴们   # 主要是修改这里
     desc: 欢迎交换友链 ꉂ(ˊᗜˋ)
     items:
-    - url: https://shino.cc/fgvf
-      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
-      name: Google
-      desc: Google 镜像
+    - url: https://shino.cc/fgvf   # 小伙伴的链接
+      img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg  # 小伙伴的头像链接
+      name: Google   # 小伙伴的网站名
+      desc: Google 镜像   # 小伙伴的描述
     - url: https://shino.cc/fgvf
       img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
       name: Google
